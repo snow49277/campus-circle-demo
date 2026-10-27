@@ -1,5 +1,7 @@
-# 校园互助网页 Demo
+# 校园互助 · AI Demo
 
-在当前目录运行 `npm start`，然后打开终端中的本地地址。运行 `npm test` 检查核心规则。需要 Node.js 22 或更新版本，无第三方运行依赖。
+前端源代码位于 `public/`，AI服务端位于 `lib/ai-service.mjs` 与 `app/api/ai/route.ts`。
 
-网页源码在 `dist/`，产品文档在 [dist/docs](dist/docs/)。本版本使用虚构身份和本地存储，真实认证、远程消息与多设备权限未接入。
+运行：`npm ci` 后 `npm run dev`；测试：`npm test`。
+
+模型尚未配置时可体验明确标注的预设交互；真实AI需服务端密钥与独立内测码。完整说明见 [AI文档](public/docs/06-AI需求助手与辅助匹配.md)。

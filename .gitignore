@@ -7,3 +7,13 @@ site/.git/
 .env
 .env.*
 !.env.example
+
+# AI server build and local runtime state
+site/.wrangler/
+site/.sites-runtime/
+site/.vinext/
+site/dist/
+site/outputs/
+site/.dev.vars*
+site/.env*
+!site/.env.example

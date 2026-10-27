@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import * as d from '../dist/domain.js';
+import * as d from '../public/domain.js';
 function ring(s){const c=d.propose(s,d.findCycles(s)[0]);c.members.forEach(m=>d.acceptCircle(s,c.id,m));return c;}
 test('real search discovers a three-person cycle, partial agreement reserves nothing',()=>{const s=d.seed();const cs=d.findCycles(s);assert.equal(cs[0].edges.length,3);const c=d.propose(s,cs[0]);d.acceptCircle(s,c.id,'a');assert.equal(s.agreements.length,0);});
 test('all accept once, each reservation blocks an extra advance',()=>{const s=d.seed();ring(s);for(const id of ['a','b','c']){assert.equal(d.balance(s,id).r,1);assert.equal(d.balance(s,id).can,false);}});
